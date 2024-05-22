@@ -10,6 +10,7 @@ const typeDefs = `
 
     type Book {
         _id: ID
+        image: String
         title: String
         author: String
         genre: String
@@ -29,6 +30,10 @@ const typeDefs = `
         books: [Book]
         orders: [Order]
         user(id: ID!): User
+    }
+
+    type Mutation {
+        addBook(image: String!, title: String!, author: String!, genre: String!, price: Float!, quantity: Int!): Book
     }
 `;
 

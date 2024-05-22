@@ -22,6 +22,21 @@ const resolvers = {
       });
     },
   },
+  Mutation: {
+    addBook: async (
+      parent,
+      { image, title, author, genre, price, quantity }
+    ) => {
+      return await Book.create({
+        image,
+        title,
+        author,
+        genre,
+        price,
+        quantity,
+      });
+    },
+  },
 };
 
 module.exports = resolvers;

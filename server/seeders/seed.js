@@ -1,6 +1,6 @@
 const db = require("../config/connection");
 const { Profile } = require("../models");
-const profileSeeds = require("./profileseeds");
+const profileSeeds = require("./userSeeds");
 const cleanDB = require("./cleanDB");
 
 db.once("open", async () => {
