@@ -5,6 +5,7 @@ const typeDefs = `
         last_name: String
         username: String
         email: String
+        orders: [Order]
     }
 
     type Book {
@@ -16,9 +17,17 @@ const typeDefs = `
         quantity: Int
     }
 
+    type Order {
+        _id: ID
+        total: Float
+        books: [Book]
+        users: User
+    }
+
     type Query {
         users: [User]
         books: [Book]
+        orders: [Order]
     }
 `;
 

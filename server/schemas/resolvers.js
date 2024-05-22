@@ -8,6 +8,9 @@ const resolvers = {
     books: async () => {
       return await Book.find({});
     },
+    orders: async () => {
+      return await Order.find({});
+    },
   },
 };
 
