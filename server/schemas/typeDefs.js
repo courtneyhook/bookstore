@@ -28,6 +28,7 @@ const typeDefs = `
         users: [User]
         books: [Book]
         orders: [Order]
+        user(id: ID!): User
     }
 `;
 
