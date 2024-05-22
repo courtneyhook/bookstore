@@ -1,14 +1,18 @@
 const db = require("../config/connection");
-const { Profile } = require("../models");
-const profileSeeds = require("./userSeeds");
+const { User, Book } = require("../models");
+const userSeeds = require("./userSeeds");
+const bookSeeds = require("./bookSeeds");
 const cleanDB = require("./cleanDB");
 
 db.once("open", async () => {
   try {
-    await cleanDB("Profile", "profiles");
+    await cleanDB("User", "users");
+    await cleanDB("Book", "books");
 
-    await Profile.create(profileSeeds);
+    await User.insertMany(userSeeds);
 
+    await Book.insertMany(bookSeeds);
+    console.log("seeds created");
     process.exit(0);
   } catch (error) {
     throw error;
