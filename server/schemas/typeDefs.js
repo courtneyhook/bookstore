@@ -13,7 +13,7 @@ const typeDefs = `
         image: String
         title: String
         author: String
-        genre: String
+        genre: [String]
         price: Float
         quantity: Int
     }
@@ -28,8 +28,8 @@ const typeDefs = `
     type Query {
         users: [User]
         books: [Book]
-        orders: [Order]
-        user(id: ID!): User
+        orders(userId: ID!): [Order]
+        user(userId: ID!): User
     }
 
     type Mutation {

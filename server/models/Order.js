@@ -16,3 +16,7 @@ const orderSchema = new Schema({
     ref: "User",
   },
 });
+
+const Order = model("Order", orderSchema);
+
+module.exports = Order;

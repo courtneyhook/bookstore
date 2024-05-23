@@ -24,7 +24,14 @@ const userSchema = new Schema({
   },
   password: {
     type: String,
+    required: true,
   },
+  orders: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "Order",
+    },
+  ],
 });
 
 const User = model("User", userSchema);

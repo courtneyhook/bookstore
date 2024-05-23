@@ -12,7 +12,7 @@ db.once("open", async () => {
     await User.insertMany(userSeeds);
 
     await Book.insertMany(bookSeeds);
-    console.log("seeds created");
+
     process.exit(0);
   } catch (error) {
     throw error;

@@ -9,8 +9,10 @@ const resolvers = {
     books: async () => {
       return await Book.find({});
     },
-    orders: async () => {
-      return await Order.find({}).populate("users").populate("books");
+    orders: async (parent, { userId }) => {
+      return await Order.find({ _id: userId })
+        .populate("users")
+        .populate("books");
     },
     user: async (parent, args) => {
       return await User.findById(args.id).populate("orders").populate({
