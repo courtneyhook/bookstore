@@ -34,6 +34,7 @@ const typeDefs = `
 
     type Mutation {
         addBook(image: String!, title: String!, author: String!, genre: String!, price: Float!, quantity: Int!): Book
+        addUser(first_name:String!, last_name: String!, username: String!, email: String!): User
     }
 `;
 

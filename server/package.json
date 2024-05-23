@@ -1,7 +1,7 @@
 {
   "name": "bookstore",
   "version": "0.0.0",
-  "main": "server/server.js",
+  "main": "server.js",
   "scripts": {
     "start": "node server.js",
     "watch": "nodemon",
@@ -9,9 +9,11 @@
   },
   "dependencies": {
     "@apollo/server": "^4.10.4",
+    "bcrypt": "^5.1.1",
     "express": "^4.19.2",
     "graphql": "^16.8.1",
-    "mongoose": "^8.4.0"
+    "mongoose": "^8.4.0",
+    "stripe": "^15.7.0"
   },
   "devDependencies": {
     "nodemon": "^3.1.0"

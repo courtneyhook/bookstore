@@ -1,13 +1,10 @@
-const { User, Book } = require("../models");
+const { User, Book, Order } = require("../models");
 const { populate } = require("../models/User");
 
 const resolvers = {
   Query: {
     users: async () => {
-      return await User.find({}).populate("orders").populate({
-        path: "orders",
-        populate: "books",
-      });
+      return await User.find({});
     },
     books: async () => {
       return await Book.find({});
@@ -35,6 +32,10 @@ const resolvers = {
         price,
         quantity,
       });
+    },
+
+    addUser: async (parent, { first_name, last_name, username, email }) => {
+      return await User.create({ first_name, last_name, username, email });
     },
   },
 };
